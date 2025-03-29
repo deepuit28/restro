@@ -15,6 +15,7 @@
   }
  @media (max-width:600px) {
     .baap{ width: 100%;
+          object-fit: cover;
     }
   }
   
