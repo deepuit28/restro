@@ -13,6 +13,10 @@
     background-color: rgb(0, 0,0, 0.6);
     
   }
+ @media (max-width:600px) {
+    .baap{ width: 100%;
+    }
+  }
   
   .navbar {
     display: flex;
