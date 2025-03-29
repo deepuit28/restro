@@ -392,8 +392,7 @@
 
 
 
-  /* Background container to ensure no white space */
-#video-background {
+/* #video-background {
   position: fixed;
   top: 0;
   left: 0;
@@ -403,7 +402,7 @@
   z-index: -1;
 }
 
-/* Video styling for perfect fullscreen coverage */
+
 #bg-video {
   position: absolute;
   top: 50%;
@@ -416,20 +415,60 @@
   min-height: 100vh;
 }
 
-/* Mobile fix to ensure video fills screen */
 @media (max-aspect-ratio: 16/9) {
   #bg-video {
-    width: 100vh;
-    height: 100vw;
+    width:100vh;
+    height:100vh;
   }
 }
 
-/* Prevent video shrinking on mobile landscape */
+
 @media (max-width: 600px) {
   #bg-video {
-    min-width: 100vw;
-    min-height: 100vh;
+    min-width:100vh;
+    object-fit: cover;
+    min-height:100vh;
+    
+  }
+} */
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+#bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+/* Adjust for taller screens (mobile portrait mode) */
+@media (max-aspect-ratio: 9/16) {
+  #bg-video {
+    width: 100vh;
+    height: auto;
   }
 }
+
+/* Ensure full coverage on smaller screens */
+@media (max-width: 600px) {
+  #bg-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+}
+
 
   
